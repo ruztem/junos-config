@@ -1,0 +1,25 @@
+set system host-name juniper-core 
+set system root-authentication encrypted-password
+set system commit synchronize
+set system arp aging-timer 5
+set system syslog file messages any notice
+set system syslog file messages authorization info
+set system syslog file interactive-commands interactive-commands any
+set chassis redundancy graceful-switchover
+delete vlans default vlan-id 1
+set vlans VLAN-TAG-11 vlan-id 11
+set interfaces ae0 aggregated-ether-options lacp active
+set interfaces ae0 aggregated-ether-options lacp periodic fast
+set interfaces ae0 description P2P-GATE
+set interfaces ae0 unit 0 family ethernet-switching port-mode trunk
+set interfaces ae0 unit 0 family ethernet-switching vlan members VLAN-TAG-11
+delete interfaces ge*
+
+
+
+
+
+
+
+
+
