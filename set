@@ -21,6 +21,7 @@ set system services ssh
 set system services ssh protocol-version v2
 set system services ssh connection-limit 5
 set system services ssh rate-limit 5
+set system login idle-timeout 60
 set snmp community junos-smg authorization read-only
 set snmp community junos-smg clients 10.10.32.55/32 #10.10.32.55 > zabbix_ip
 
